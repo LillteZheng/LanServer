@@ -6,7 +6,7 @@
     <style type="text/css">
         .panel{
             position: absolute;top: 0;bottom: 0;left: 0;right: 0;
-            width: 80%;
+            width: 60%;
             height: 140px;
             padding: 50px;
             margin: auto;
@@ -28,7 +28,7 @@
             position: absolute;top: 120px;bottom: 0;left: 0;right: 0;
         }
         input{
-            width: 60%;
+            width: 30%;
             height: 44px;
             padding: 0 65px 0 10px;
             font-size: 16px;
@@ -37,7 +37,7 @@
             box-shadow: inset 1px 1px 11px rgba(0,0,0,.3);
         }
         .button {
-            width: 10%;
+            width: 20%;
             height: 44px;
             background-color: dodgerblue; /* Green */
             border: none;
@@ -51,16 +51,25 @@
             cursor: pointer;
         }
 
-
     </style>
+    <script type="text/javascript">
+        function checkPassword(myPassword,hrefUrl) {
+            var inputPassword = document.getElementById("inputpass").value;
+            if (myPassword == inputPassword) {
+                window.location.href=hrefUrl;
+            }else{
+                alert("密码错误啦")
+            }
+        }
+    </script>
 </head>
 <body>
 
 <div class="panel">
     <div class="title" >请输入密码</div>
     <div class="wrap">
-        <input type="text" placeholder="Input your password here"/>
-        <button class="button" >确定</button>
+        <input type="text" id="inputpass"/>
+        <button class="button" onclick="checkPassword(2580,'http://192.168.0.189:8080')">确定</button>
     </div>
 
 </div>

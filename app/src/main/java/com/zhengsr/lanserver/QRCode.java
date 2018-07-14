@@ -86,7 +86,7 @@ public class QRCode {
                     if (bitMatrix.get(x, y)) {
                         pixels[y * size + x] = mBitmap.getPixel(x, y);
                     } else {
-                        pixels[y * size + x] = color;
+                        pixels[y * size + x] =  0xffffffff;
                     }
 
                 }
