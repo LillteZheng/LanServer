@@ -1,7 +1,6 @@
 package com.zhengsr.lanserver.server.request;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.koushikdutta.async.http.server.AsyncHttpServerRequest;
 import com.koushikdutta.async.http.server.AsyncHttpServerResponse;
@@ -27,10 +26,10 @@ public class ImageRequestHandle implements HttpServerRequestCallback {
     public void onRequest(AsyncHttpServerRequest request, AsyncHttpServerResponse response) {
         try {
             InputStream is = mContext.getAssets().open("beauty.jpg");
+            //输入图片
             response.sendStream(is,is.available());
         } catch (Exception e) {
             e.printStackTrace();
-            Log.d(TAG, "zsr --> onRequest: "+e.toString());
         }
 
     }

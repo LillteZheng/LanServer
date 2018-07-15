@@ -29,6 +29,15 @@ public class LanServerBean {
         private int port;
         private String filterString;
         private String htmlString;
+        private String ipAddr;
+
+
+
+        public Builder setIpAddr(String ipAddr) {
+            this.ipAddr = ipAddr;
+            return this;
+        }
+
         private LinkedHashMap<String, HttpServerRequestCallback> handlerMap = new LinkedHashMap<>();
 
 
@@ -67,6 +76,9 @@ public class LanServerBean {
 
         public Map<String, HttpServerRequestCallback> getHandlerMap() {
             return handlerMap;
+        }
+        public String getIpAddr() {
+            return ipAddr;
         }
 
         @Override
